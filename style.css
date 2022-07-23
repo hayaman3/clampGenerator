@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+
+}
+form{
+    margin: 5px auto;
+    width:150px;
+}
+ul{
+    width:100px;
+    display:flex;
+    flex-direction: column;
+    list-style-type:none;
+}
+label{ 
+    float:left;
+    margin:5px 0;
+}
+
+input[type=number]{
+    width: 3em;
+    padding: .2em;
+    margin:5px 0;
+    display: table-cell;
+    float:right;
+}
+
+    
+
