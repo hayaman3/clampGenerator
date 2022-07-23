@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <title>Document</title>
 </head>
 <body>
-        <form>
-            <li>
-                <title>Max width</title>
-                <label for="number">PHONE NUMBER</label>
-                <input type="number" id="number" name="number">
-              </li>
-              <li>
-                <title>Min width</title>
-                <label for="number">PHONE NUMBER</label>
-                <input type="number" id="number" name="number">
-              </li>
-              <li>
-                <title>Max element size</title>
-                <label for="number">PHONE NUMBER</label>
-                <input type="number" id="number" name="number">
-              </li>
-              <li>
-                <title>Min element size</title>
-                <label for="number">PHONE NUMBER</label>
-                <input type="number" id="number" name="number">
-              </li>
-              <button type="submit">Submit</button>
+  <form id="form">
+    <ul>
+      <li>
+        <p>Media screen query</p>
+        <title>Max parent element size</title>
+          <label for="max-parent">Max</label>
+          <input type="number" id="max-parent" name="max-parent" min="1" step=".01">
+        </li>
+        <li>
+          <title>Min parent element size</title>
+          <label for="min-parent">Min</label>
+          <input type="number" id="min-parent" name="min-parent" min="1" step=".01">
+        </li>
+        <li>
+        <p>Element size</p>
+          <title>Max child element size</title>
+          <label for="max-child">Max</label>
+          <input type="number" id="max-child" name="max-child" min="1" step=".01">
+        </li>
+        <li>
+          <title>Min child element size</title>
+          <label for="min-child">Min</label>
+          <input type="number" id="min-child" name="min-child" min="1" step=".01">
+        </li>
+        <button type="submit" id="submit">Submit</button>
+    </ul>
+  </form>
 
-        </form>
+
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
