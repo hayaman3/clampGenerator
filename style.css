@@ -27,6 +27,9 @@ input[type=number]{
     display: table-cell;
     float:right;
 }
-
+#result{
+    margin:auto;
+    width:250px;
+}
     
 

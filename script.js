@@ -1,22 +1,28 @@
-let minWidth = 22.5;
-let maxWidth = 52.5;
-let minFontSize = 1;
-let maxFontSize = 3.5;
+// let minParent = 22.5;
+// let maxParent = 52.5;
+// let minChild = 1;
+// let maxChild = 3.5;
+let minParent = ""
+let maxParent = ""
+let minChild = ""
+let maxChild = ""
+let slope = ""
+let yAxis = ""
+const form = document.getElementById('form');
+const result = document.getElementById('result')
 
 
 function getPrefferedValue(){
-    let slope = getSlope(minWidth,maxWidth,minFontSize,maxFontSize)
-    console.log("slope: "+slope);
-    let yAxis = -minWidth*slope + minFontSize;
-    console.log("y-axis: "+yAxis);
-    return yAxis.toString() +" + "+ (slope*100).toString()+"vw"; 
+    slope = getSlope(minParent,maxParent,minChild,maxChild)
+    yAxis = -minParent*slope + Number(minChild);
+    let resultText = yAxis.toFixed(4).toString() +" + "+ (slope*100).toFixed(4).toString()+"vw"; 
+    result.innerText = resultText;
 }
 
-function getSlope(minWidth,maxWidth,minFontSize,maxFontSize){
-    return (maxFontSize-minFontSize)/(maxWidth-minWidth)
+function getSlope(minParent,maxParent,minChild,maxChild){
+    console.log(maxChild-minChild)/(maxParent-minParent)
+    return (maxChild-minChild)/(maxParent-minParent)
 }
-
-const form = document.getElementById('form');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault(); // prevent page refresh
@@ -25,10 +31,10 @@ form.addEventListener('submit', (event) => {
     // const values = [...formData.entries()];
     // console.log(values);
 
-    minWidth = formData.get("max-parent");
-    maxWidth = formData.get("min-parent");
-    minFontSize = formData.get("max-child");
-    maxFontSize = formData.get("min-child2");
+    minParent = formData.get("min-parent");
+    maxParent = formData.get("max-parent");
+    maxChild = formData.get("max-child");
+    minChild = formData.get("min-child");
 
     getPrefferedValue()
 })
