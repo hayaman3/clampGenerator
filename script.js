@@ -26,15 +26,10 @@ function getSlope(minParent,maxParent,minChild,maxChild){
 
 form.addEventListener('submit', (event) => {
     event.preventDefault(); // prevent page refresh
-
     const formData = new FormData(form);
-    // const values = [...formData.entries()];
-    // console.log(values);
-
     minParent = formData.get("min-parent");
     maxParent = formData.get("max-parent");
     maxChild = formData.get("max-child");
     minChild = formData.get("min-child");
-
     getPrefferedValue()
 })
